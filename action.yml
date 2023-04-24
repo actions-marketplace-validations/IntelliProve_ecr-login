@@ -1,5 +1,5 @@
 # action.yml
-name: 'ECR Login'
+name: 'ECR Login - Debian Buster'
 description: 'Docker login for AWS ECR private'
 outputs:
   login-string: # id of output
