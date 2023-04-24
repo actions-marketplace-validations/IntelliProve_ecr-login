@@ -1,6 +1,20 @@
-# ECR login docker action
+# Introduction
 
-[![Actions Status](https://github.com/thalesvon/ecr-login/workflows/Test/badge.svg)](https://github.com/thalesvon/ecr-login/actions)
+> This repo is a fork on [thalesvon/ecr-login](https://github.com/thalesvon/ecr-login).
+
+Support added for Debian Buster.
+Cause: Debian Stretch end-of-life starting from June 2023.
+
+**Dockerfile**
+```docker
+# Orginal thalesvon
+FROM python:3-stretch
+
+# Changed to
+FROM python:3-buster
+```
+
+# ECR login docker action
 
 This action gets a login string to AWS ECR and returns as an output of the action.
 
@@ -27,7 +41,7 @@ docker login -u AWS -p <pass> <ecr-url>
 ```yaml
     - name: 'Get Login to AWS ECR'
       id: ecr-login
-      uses: thalesvon/ecr-login@master
+      uses: IntelliProve/ecr-login@master
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_DEFAULT_OUTPUT: json
